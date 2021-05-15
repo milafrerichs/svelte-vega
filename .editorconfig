@@ -1,0 +1,3 @@
+[*.{js,json,html,svelte}]
+indent_style = space
+indent_size = 2

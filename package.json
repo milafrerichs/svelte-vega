@@ -1,0 +1,66 @@
+{
+  "name": "compoenent",
+  "svelte": "src/Component.svelte",
+  "module": "index.mjs",
+  "version": "0.0.1",
+  "description": "component",
+  "main": "index.js",
+  "author": "Mila Frerichs <mila.frerichs@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@rollup/plugin-commonjs": "^13",
+    "@rollup/plugin-html": "^0.2.0",
+    "@rollup/plugin-node-resolve": "^8",
+    "@testing-library/jest-dom": "^5.10.1",
+    "@testing-library/svelte": "^3.0.0",
+    "babel-jest": "^26.1.0",
+    "jest": "^26.1.0",
+    "jest-canvas-mock": "^2.2.0",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^2.3.4",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-html": "^0.2.1",
+    "rollup-plugin-livereload": "^1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-svelte": "^5",
+    "rollup-plugin-terser": "^6",
+    "sirv-cli": "^1",
+    "svelte": "^3",
+    "svelte-jester": "^1.0.6"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "autobuild": "rollup -c example/rollup.config.js -w",
+    "start:dev": "sirv example/public --dev -p 1313",
+    "prepublishOnly": "npm run srcdoc && npm run build",
+    "start": "run-p start:dev autobuild",
+    "test": "jest",
+    "test:watch": "npm run test -- --watch"
+  },
+  "dependencies": {
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.svelte$": "svelte-jester"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "svelte"
+    ],
+    "setupFiles": [
+      "jest-canvas-mock"
+    ],
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ]
+  },
+  "files": [
+    "src",
+    "scripts",
+    "index.mjs",
+    "index.js"
+  ]
+}
